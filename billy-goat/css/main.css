@@ -1,0 +1,174 @@
+html, body {
+  min-height: 100%;
+  width: 100%;
+}
+body {
+  margin: 0;
+  font-size: 0;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1;
+}
+body.light {
+  background-color: #fafafa;
+}
+
+.main-image {
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+}
+.main-image img.big-image {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: calc(180px - 28.125vw);
+  height: 56.25vw;
+  width: 100vw;
+}
+@media (max-width: 640px) {
+  .main-image img.big-image {
+    top: 0;
+    left: calc(50vw - 320px);
+    height: 360px;
+    width: 640px;
+  }
+}
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-image: linear-gradient(0deg, transparent, rgba(0,0,0,0.5));
+  text-align: right;
+  z-index: 10;
+}
+.navbar .container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+.navbar .container a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 11px;
+}
+@media (max-width: 400px) {
+  .navbar {
+    text-align: center;
+  }
+}
+.blog-name {
+  font-family: 'Roboto Slab', serif;
+  color: white;
+  text-shadow: 0 0 8px rgba(0,0,0,0.3), 0 0 16px rgba(0,0,0,0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.blog-name span {
+  font-size: 112px;
+  word-break: break-all;
+}
+
+.content.container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+.content.container.overlap-top {
+  margin-top: -40px;
+}
+.post-card {
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  padding: 20px;
+  margin: 20px;
+}
+body.light .post-card {
+  background-color: white;
+}
+.post-card .date {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+body.light .post-card .date {
+  color: rgba(0,0,0,0.32);
+}
+.post-card h1 {
+  margin: 0;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  font-weight: normal;
+  word-break: break-all;
+}
+body.light .post-card h1 {
+  color: rgba(0,0,0,0.87);
+}
+.post-card h1 a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 56px;
+  font-family: 'Roboto Slab', serif;
+}
+.post-card .description {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+}
+body.light .post-card .description {
+  color: rgba(0,0,0,0.54);
+}
+
+.footer {
+  background-color: #202021;
+  min-height: 44px;
+}
+.footer .container {
+  margin: 0 auto;
+  max-width: 800px;
+  position: relative;
+}
+.footer .legal {
+  display: block;
+  color: white;
+  font-size: 14px;
+  padding: 15px;
+}
+.footer .social {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 5px;
+}
+.footer .social li {
+  display: inline-block;
+  margin: 5px;
+}
+.footer .social li a img {
+  height: 24px;
+}
+@media (max-width: 400px) {
+  .footer .legal {
+    text-align: center;
+    padding-bottom: 0;
+  }
+  .footer .social {
+    position: static;
+    text-align: center;
+  }
+}
