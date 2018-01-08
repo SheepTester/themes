@@ -1,3 +1,6 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
 html, body {
   min-height: 100%;
   width: 100%;
@@ -10,6 +13,14 @@ body {
 }
 body.light {
   background-color: #fafafa;
+}
+body.dark {
+  background-color: #303030;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .main-image {
@@ -38,7 +49,7 @@ body.light {
   top: 0;
   left: 0;
   width: 100%;
-  height: 40px;
+  height: 50px;
   background-image: linear-gradient(0deg, transparent, rgba(0,0,0,0.5));
   text-align: right;
   z-index: 10;
@@ -55,6 +66,11 @@ body.light {
   font-size: 14px;
   text-transform: uppercase;
   padding: 11px;
+  margin: 5px;
+  margin-left: 0;
+}
+.navbar .container a:focus {
+  outline: none;
 }
 @media (max-width: 400px) {
   .navbar {
@@ -85,42 +101,67 @@ body.light {
   margin: 0 auto;
   max-width: 800px;
 }
-.content.container.overlap-top {
-  margin-top: -40px;
+.home .content.container {
+  margin-top: -60px;
 }
 .post-card {
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
   padding: 20px;
   margin: 20px;
+  position: relative;
+}
+.post-card::before {
+  content: '#' attr(data-index);
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
 }
 body.light .post-card {
   background-color: white;
+  color: rgba(0,0,0,0.38);
+}
+body.dark .post-card {
+  background-color: #424242;
+  color: rgba(255,255,255,0.5);
 }
 .post-card .date {
   margin: 0;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
-}
-body.light .post-card .date {
-  color: rgba(0,0,0,0.32);
+  margin-right: 20px;
 }
 .post-card h1 {
   margin: 0;
   margin-bottom: 15px;
   margin-top: 5px;
   font-weight: normal;
-  word-break: break-all;
 }
 body.light .post-card h1 {
   color: rgba(0,0,0,0.87);
+}
+body.dark .post-card h1 {
+  color: white;
+}
+@media (max-width: 300px) {
+  .post-card h1 {
+    word-break: break-all;
+  }
 }
 .post-card h1 a {
   text-decoration: none;
   color: inherit;
   font-size: 56px;
   font-family: 'Roboto Slab', serif;
+}
+.post-card h1 a:focus {
+  outline: none;
+  text-decoration: underline;
 }
 .post-card .description {
   font-size: 14px;
@@ -129,6 +170,109 @@ body.light .post-card h1 {
 }
 body.light .post-card .description {
   color: rgba(0,0,0,0.54);
+}
+body.dark .post-card .description {
+  color: rgba(255,255,255,0.7);
+}
+
+.pagination {
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+.pagination .current-page {
+  font-weight: 500;
+  text-decoration: uppercase;
+  font-size: 14px;
+  color: rgba(0,0,0,0.54);
+}
+body.dark .pagination .current-page {
+  color: rgba(255,255,255,0.7);
+}
+.pagination .current-page input {
+  width: 20px;
+  color: inherit;
+  font: inherit;
+  background: none;
+  text-align: right;
+  border-radius: 2px;
+  transition: border .2s;
+}
+.pagination .current-page input:focus {
+  outline: none;
+}
+body.light .pagination .current-page input {
+  border: 1px solid rgba(0,0,0,0.15);
+}
+body.light .pagination .current-page input:focus {
+  border: 1px solid rgba(0,0,0,0.3);
+}
+body.dark .pagination .current-page input {
+  border: 1px solid rgba(255,255,255,0.15);
+}
+body.dark .pagination .current-page input:focus {
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.pagination button {
+  background: none;
+  border: none;
+  height: 24px;
+  width: 24px;
+  background-image: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  box-sizing: content-box;
+  padding: 6px;
+  opacity: 0.54;
+  margin: -6px;
+}
+body.dark .pagination button:focus {
+  opacity: 0.7;
+}
+.pagination button:focus {
+  outline: none;
+  opacity: 0.8;
+}
+body.dark .pagination button:focus {
+  opacity: 1;
+}
+body.light .pagination button:disabled {
+  opacity: 0.38;
+}
+body.dark .pagination button:disabled {
+  opacity: 0.5;
+}
+.pagination button.first-page {
+  left: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.41 16.59L13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z'/%3E%3C/svg%3E");
+}
+body.dark .pagination button.first-page {
+  background-image: url("data:image/svg+xml,%3Csvg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.41 16.59L13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z'/%3E%3C/svg%3E");
+}
+.pagination button.prev-page {
+  left: 60px;
+  background-image: url("data:image/svg+xml,%3Csvg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
+}
+body.dark .pagination button.prev-page {
+  background-image: url("data:image/svg+xml,%3Csvg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
+}
+.pagination button.next-page {
+  right: 60px;
+  background-image: url("data:image/svg+xml,%3Csvg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/%3E%3C/svg%3E");
+}
+body.dark .pagination button.next-page {
+  background-image: url("data:image/svg+xml,%3Csvg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/%3E%3C/svg%3E");
+}
+.pagination button.last-page {
+  right: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.59 7.41L10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z'/%3E%3C/svg%3E");
+}
+body.dark .pagination button.last-page {
+  background-image: url("data:image/svg+xml,%3Csvg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.59 7.41L10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z'/%3E%3C/svg%3E");
 }
 
 .footer {
@@ -157,10 +301,19 @@ body.light .post-card .description {
 }
 .footer .social li {
   display: inline-block;
-  margin: 5px;
+}
+.footer .social li a:focus {
+  outline: none;
 }
 .footer .social li a img {
+  display: inline-block;
   height: 24px;
+  opacity: 0.7;
+  padding: 5px;
+}
+.footer .social li a:focus img, .footer .social li a:hover img {
+  height: 24px;
+  opacity: 1;
 }
 @media (max-width: 400px) {
   .footer .legal {
