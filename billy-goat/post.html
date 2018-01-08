@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,500" rel="stylesheet">
     <link rel="stylesheet" href="../material_ripple.css">
+    <link rel="stylesheet" href="./css/post-content.css">
     <link rel="stylesheet" href="./css/main.css">
     <script src="../material_ripple.js" charset="utf-8"></script>
     <script src="./js/main.js" charset="utf-8"></script>
   </head>
-  <body class="home light">
+  <body class="post light">
     <div class="main-image">
       <div class="navbar">
         <div class="container">
@@ -21,45 +22,30 @@
         </div>
       </div>
       <div class="blog-name">
-        <span>Blog</span>
+        <span>Blog post</span>
       </div>
       <img src="https://source.unsplash.com/featured/1600x900/?nature" class="big-image" onload="this.classList.add('loaded')">
       <!-- <img src="https://images.unsplash.com/reserve/m6rT4MYFQ7CT8j9m2AEC_JakeGivens%20-%20Sunset%20in%20the%20Park.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=4ab7d1b6931e19fa21a31b71ed3fbbcb" class="big-image" onload="this.classList.add('loaded')"> -->
     </div>
     <div class="content container">
-      <span class="year">2018</span>
-      <div class="post-card" data-index="10">
-        <p class="date">jan 15 (tue) &mdash; 1 day ago</p>
-        <h1><a href="post.html">My post</a></h1>
-        <p class="description">A TL;DR here would be nice</p>
-      </div>
-      <div class="post-card" data-index="9">
-        <p class="date">jan 14 (mon) &mdash; 2 days ago</p>
-        <h1><a href="post.html">Another post</a></h1>
-        <p class="description">Or a description of what the post is going to contain</p>
-      </div>
-      <span class="year">2017</span>
-      <div class="post-card" data-index="8">
-        <p class="date">aug 24 (sun) &mdash; 28 days ago</p>
-        <h1><a href="post.html">Clickbait title</a></h1>
-        <p class="description">Gotta get that ad revenue coming in</p>
-      </div>
-      <div class="post-card" data-index="7">
-        <p class="date">aug 23 (sat) &mdash; 29 days ago</p>
-        <h1><a href="post.html">Generic title</a></h1>
-        <p class="description">Generic description</p>
-      </div>
-      <div class="post-card" data-index="6">
-        <p class="date">jan 13 (fri) &mdash; 1 year ago</p>
-        <h1><a href="post.html">Ditto</a></h1>
-        <p class="description">What ^ said</p>
-      </div>
-      <div class="pagination">
-        <button type="button" class="material-btn icon first-page" disabled></button>
-        <button type="button" class="material-btn icon prev-page" disabled></button>
-        <span class="current-page"><input type="number" value="1"> of 26</span>
-        <button type="button" class="material-btn icon next-page"></button>
-        <button type="button" class="material-btn icon last-page"></button>
+      <div class="post-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper eros arcu. Nulla maximus facilisis dignissim. Quisque semper lectus est, sed ullamcorper elit mattis id.</p>
+        <h1>Ĉu vi amas min?</h1>
+        <p>Fusce eget arcu blandit, fringilla diam et, venenatis neque. In diam ipsum, euismod quis massa et, accumsan fermentum arcu. Nullam euismod nunc sed dui sollicitudin pharetra.</p>
+        <h2>Mi ne amas vin</h2>
+        <p>Nullam vulputate sagittis sem, id lobortis risus porttitor non. Aenean elit risus, mattis vitae consequat nec, pulvinar ac sapien.</p>
+        <blockquote cite="Mark Watson">
+          <p>Curiously, two of the internet’s greatest strengths, anonymity and diversity, are why the comments section always sucks.</p>
+        </blockquote>
+        <p>Proin fermentum lacus felis, et pharetra dolor facilisis ut.</p>
+        <p>Sed purus urna, hendrerit sed ante eget, ultricies consequat arcu.</p>
+        <pre>function useless() {<br>  let i = 3;<br>  return i;<br>}</pre>
+        <hr>
+        <h3>Adamo! Kien vi iras?</h3>
+        <p>Mi iras hejmen. Kaj vi?</p>
+        <div class="comments">
+          <span class="error">Unable to load comments</span>
+        </div>
       </div>
     </div>
     <div class="footer">
