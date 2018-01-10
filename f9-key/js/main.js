@@ -21,9 +21,25 @@ document.addEventListener("DOMContentLoaded", e => {
     }, false);
   }
 
-  let scrollDown = document.querySelector(".scroll-prompt .scroll-down");
+  let scrollDown = document.querySelector(".scroll-prompt .scroll-down"),
+  autoScrolling = false;
+  function autoScroll() {
+    if (!autoScrolling) return;
+    let scrollDist = (window.innerHeight - (window.pageYOffset || document.documentElement.scrollTop || 0));
+    if (Math.abs(scrollDist) < 1) {
+      window.scrollTo(0, window.innerHeight);
+      autoScrolling = false;
+    } else {
+      window.scrollBy(0, Math.ceil(scrollDist / 5));
+      window.requestAnimationFrame(autoScroll);
+    }
+  }
   scrollDown.addEventListener("click", e => {
-    // TODO: ADD SCROLL ANIMATION
-    // e.preventDefault();
+    autoScrolling = true;
+    autoScroll();
+    e.preventDefault();
   }, false);
+  window.addEventListener("wheel",e=>{
+    if (autoScrolling) autoScrolling = false;
+  },false);
 }, false);
