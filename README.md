@@ -8,7 +8,7 @@ Website themes that I made. They're free, and you can steal them.
 
 Tags: `materialesque light dark blog unnecessary-images`
 
-**Claimed by: [Mountio](https://mountio.github.io/)**
+**Claimed by: [Mountio](https://mountios.github.io/)**
 
 Credits: [Google Fonts](https://fonts.google.com/), [Simple Icons](https://simpleicons.org/), [Material Design Guidelines](https://material.io/guidelines/), [Unsplash](https://unsplash.com/)
 
